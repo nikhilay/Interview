@@ -1,7 +1,7 @@
 package ctci;
 
 public class isUnique {
-    public static boolean isUniqueWord(String word){
+    public boolean isUniqueWord(String word){
         if(word.isEmpty()){
             return false;
         }
