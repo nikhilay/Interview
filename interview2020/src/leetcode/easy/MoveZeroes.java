@@ -1,7 +1,7 @@
 package leetcode.easy;
 
 public class MoveZeroes {
-    
+
 //https://leetcode.com/problems/move-zeroes/discuss/72011/Simple-O(N)-Java-Solution-Using-Insert-Index
     public void moveZeroes(int[] nums) {
         if(nums == null || nums.length == 0){
