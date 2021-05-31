@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.medium;
 
 public class NumberOfIslands {
     //https://leetcode.com/problems/number-of-islands/discuss/56359/Very-concise-Java-AC-solution

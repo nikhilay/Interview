@@ -1,5 +1,8 @@
 package leetcode.easy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
