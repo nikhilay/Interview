@@ -15,6 +15,8 @@ public class GasStation {
         }
 
         //Find out the starting point
+        //If car starts at A and can not reach B. Any station between A and B
+        //can not reach B.
         int travelCost = 0;
         int start = 0;
         for (int i = 0; i < gas.length; i++) {
