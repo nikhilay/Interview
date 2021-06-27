@@ -6,7 +6,7 @@ public class RemoveAllAdjacentDuplicatesInStringII {
         if (k == 0) return s;
         int len = s.length();
         int[] count = new int[len];
-        int[] uniqueString = new int[len];
+        char[] uniqueString = new char[len];
 
         int i = 0;
         for (int j = 0; j < len && i < len; j++, i++) {
