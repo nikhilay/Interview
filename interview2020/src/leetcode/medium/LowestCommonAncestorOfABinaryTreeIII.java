@@ -1,7 +1,14 @@
-package leetcode.easy;
+package leetcode.medium;
 
-public class IntersectionOfTwoLinkedLists {
-    //https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!
+public class LowestCommonAncestorOfABinaryTreeIII {
+    class Node {
+        public int val;
+        public Node left;
+        public Node right;
+        public Node parent;
+    }
+
+    ;
     /*
     You can prove that: say A length = a + c, B length = b + c, after switching pointer, pointer A
     will move another b + c steps, pointer B will move a + c more steps,
@@ -10,15 +17,13 @@ public class IntersectionOfTwoLinkedLists {
 Thanks, hpplayer. This solution is very smart.
 https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!/50080
      */
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
-
-        ListNode a = headA;
-        ListNode b = headB;
-
+    public Node lowestCommonAncestor(Node p, Node q) {
+        Node a = p;
+        Node b = q;
         while (a != b) {
-            a = a == null ? headB : a.next;
-            b = b == null ? headA : b.next;
+            a = a == null ? q : a.parent;
+            b = b == null ? p : b.parent;
+
         }
         return a;
     }
