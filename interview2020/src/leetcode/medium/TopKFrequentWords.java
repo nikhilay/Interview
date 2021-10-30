@@ -9,27 +9,21 @@ public class TopKFrequentWords {
         for (String s : words) {
             frequencyMap.put(s, frequencyMap.getOrDefault(s, 0) + 1);
         }
-        PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(new Comparator<Map.Entry<String, Integer>>() {
+        PriorityQueue<String> pq = new PriorityQueue<>(new Comparator<String>() {
             @Override
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                if (o1.getValue() == o2.getValue()) {
-                    return o2.getKey().compareTo(o1.getKey());
+            public int compare(String o1, String o2) {
+                if(frequencyMap.get(o1)==frequencyMap.get(o2)){
+                    return  o1.compareTo(o2);
                 }
-                return o1.getValue() - o2.getValue();
+                return frequencyMap.get(o2) - frequencyMap.get(o1);
             }
         });
-        for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
-            pq.offer(entry);
-            if (pq.size() > k) {
-                pq.poll();
-            }
-        }
-
+        pq.addAll(frequencyMap.keySet());
         List<String> result = new LinkedList<>();
-        while (!pq.isEmpty()) {
-            result.add(0, pq.poll().getKey());
-        }
+        for(int i= 0;i<k;i++){
+            if(!pq.isEmpty())  result.add(pq.poll());
 
+        }
         return result;
     }
 }
