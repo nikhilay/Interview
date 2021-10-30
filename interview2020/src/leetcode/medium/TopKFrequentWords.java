@@ -3,7 +3,7 @@ package leetcode.medium;
 import java.util.*;
 
 public class TopKFrequentWords {
-    //https://leetcode.com/problems/top-k-frequent-words/discuss/108346/My-simple-Java-solution-using-HashMap-and-PriorityQueue-O(nlogk)-time-and-O(n)-space
+    //https://leetcode.com/problems/top-k-frequent-words/discuss/108346/My-simple-Java-solution-using-HashMap-and-PriorityQueue-O(nlogk)-time-and-O(n)-space/119001
     public List<String> topKFrequent(String[] words, int k) {
         HashMap<String, Integer> frequencyMap = new HashMap<>();
         for (String s : words) {
